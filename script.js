@@ -22,4 +22,36 @@ function createGrid(gridSize = 16) {
     });
 }
 
+function removeDivsGrid() {
+    const container = document.querySelector('.container');
+    let firstChild = container.firstChild;
+
+    while(firstChild) {
+        container.removeChild(firstChild);
+        firstChild = container.firstChild;
+    }
+}
+
+const btnGrid = document.querySelector('.btn_grid');
+
+btnGrid.addEventListener('click', e => {
+    let newGridSize = prompt('Select a new grid size from 1 to 100');
+
+    if(typeof newGridSize != 'string') return;
+    if(isNaN(newGridSize) || newGridSize.trim() == '') {
+        alert('You can only user numbers from 1 to 100!');
+        return;
+    }
+
+    newGridSize = parseInt(newGridSize);
+    
+    if(newGridSize < 1 || newGridSize > 100) {
+        alert('The provided value is out of range!');
+        return;
+    }
+
+    removeDivsGrid();
+    createGrid(newGridSize);
+});
+
 createGrid();
