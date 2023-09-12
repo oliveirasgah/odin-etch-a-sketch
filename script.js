@@ -1,21 +1,25 @@
-const container = document.querySelector('.container');
-let divsGrid = [];
+function createGrid(gridSize = 16) {
+    const container = document.querySelector('.container');
+    let divsGrid = [];
 
-for(let i = 0; i < 16; i++) {
-    let divsRow = [];
+    for(let i = 0; i < gridSize; i++) {
+        let divsRow = [];
 
-    for(let j = 0; j < 16; j++) {
-        const div = document.createElement('div');
-        div.classList.add('cell_grid');
+        for(let j = 0; j < gridSize; j++) {
+            const div = document.createElement('div');
+            div.classList.add('cell_grid');
 
-        divsRow.push(div);
+            divsRow.push(div);
+        }
+
+        divsGrid.push(divsRow);
     }
 
-    divsGrid.push(divsRow);
+    divsGrid.forEach(divRow => {
+        divRow.forEach(div => {
+            container.appendChild(div);
+        });
+    });
 }
 
-divsGrid.forEach(divRow => {
-    divRow.forEach(div => {
-        container.appendChild(div);
-    });
-});
+createGrid();
