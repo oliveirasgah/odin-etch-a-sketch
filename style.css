@@ -2,11 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1em;
 }
 
 .cell_grid {
     height: 100px;
     width: 100px;
     background-color: rgb(235, 100, 100);
+    flex-grow: 1;
+}
+
+.cell_grid:hover {
+    background-color: green;
 }
