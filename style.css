@@ -1,5 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
 .container {
-    width: 1020px;
+    width: 960px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -7,8 +11,8 @@
 }
 
 .cell_grid {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     background-color: rgb(235, 100, 100);
     flex-grow: 1;
     border: 1px solid darkgray;
