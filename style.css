@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.cell_grid {
+    height: 100px;
+    width: 100px;
+    background-color: yellow;
+}

@@ -1,3 +1,4 @@
+const container = document.querySelector('.container');
 let divsGrid = [];
 
 for(let i = 0; i < 16; i++) {
@@ -13,4 +14,8 @@ for(let i = 0; i < 16; i++) {
     divsGrid.push(divsRow);
 }
 
-console.log(divsGrid);
+divsGrid.forEach(divRow => {
+    divRow.forEach(div => {
+        container.appendChild(div);
+    });
+});
