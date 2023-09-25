@@ -7,6 +7,8 @@ function createGrid(gridSize = 16) {
 
         for(let j = 0; j < gridSize; j++) {
             const div = document.createElement('div');
+
+            div.addEventListener('mouseover', divHoverRandomizer);
             div.classList.add('cell_grid');
 
             divsRow.push(div);
@@ -30,6 +32,14 @@ function removeDivsGrid() {
         container.removeChild(firstChild);
         firstChild = container.firstChild;
     }
+}
+
+function divHoverRandomizer(e) {
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+
+    this.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
 }
 
 const btnGrid = document.querySelector('.btn_grid');
